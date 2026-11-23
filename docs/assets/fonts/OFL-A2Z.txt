@@ -1,0 +1,17 @@
+에이투지체 (A2Z) — SIL Open Font License, Version 1.1
+
+이 폴더의 글꼴 파일(A2Z-4Regular.woff, A2Z-8ExtraBold.woff)은 에이투지체를 웹용으로 줄인 복제본입니다.
+
+[글꼴 파일에 적힌 표기 그대로]
+Copyright © 2026 PT&
+Designer: 이주임 (Lee Juim) / Latin glyphs from Outfit by Smartsheet Inc, Rodrigo Fuenzalida
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+License URL: http://scripts.sil.org/OFL  (공식 본문: https://openfontlicense.org/open-font-license-official-text/)
+
+[이 사이트에서 바꾼 점]
+- 원본 글꼴에서 한글(KS X 1001의 2,350자)·영문·기호 글리프만 남기고 나머지를 뺐습니다(subset). 글꼴 모양은 바꾸지 않았습니다.
+- 웹용 형식(WOFF)으로 변환했습니다.
+- 글꼴을 판매하지 않고, 같은 라이선스(OFL 1.1)로만 배포합니다.
+
+[라이선스 전문]
+OFL 1.1 전문은 이 폴더의 OFL.txt를 따릅니다.

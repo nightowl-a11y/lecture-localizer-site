@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>강의 현지화 도구 설치 페이지</title>
+<meta name="description" content="강의 번역 도구를 설치하기 위한 페이지입니다.">
+<link rel="preload" href="assets/fonts/A2Z-8ExtraBold.woff" as="font" type="font/woff" crossorigin>
+<script>(function(){var m="auto";try{m=localStorage.getItem("aien-theme")||"auto"}catch(e){}var h=new Date().getHours(),night=h>=18||h<6,os=false;try{os=matchMedia("(prefers-color-scheme: dark)").matches}catch(e){}document.documentElement.setAttribute("data-theme",m==="light"||m==="dark"?m:((night||os)?"dark":"light"))})();</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="cover-page">
+<main class="stage">
+  <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="화면 모드: 라이트"><svg class="ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></g></svg><svg class="ico" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg><span class="knob"></span></button>
+  <div class="art" aria-hidden="true">
+    <img id="cover-art" alt="" width="1536" height="1024">
+    <script>document.getElementById("cover-art").src="assets/cover-"+(document.documentElement.getAttribute("data-theme")==="dark"?"dark":"light")+".jpg";</script>
+    <noscript><img src="assets/cover-light.jpg" alt="" width="1536" height="1024"></noscript>
+  </div>
+  <p class="t backdrop" aria-hidden="true">Lecture<br>Localization</p>
+  <h1 class="t">강의 현지화 도구<br>설치 페이지</h1>
+  <p class="t sub">강의 번역 도구를 설치하기 위한 페이지입니다.</p>
+  <a class="go" href="download.html">시작하기</a>
+  <p class="links"><a href="guide.html">설치 안내 · Q&amp;A</a></p>
+</main>
+<div id="aien-credit" aria-hidden="true" style="position:fixed!important;right:8px!important;bottom:3px!important;z-index:2147483647!important;display:block!important;visibility:visible!important;font:300 10px/1 sans-serif!important;color:#000!important;opacity:.13!important;pointer-events:none!important;user-select:none!important;white-space:nowrap!important">제작: 에듀테크혁신팀 고유진</div>
+<script src="config.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
