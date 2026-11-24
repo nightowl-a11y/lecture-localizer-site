@@ -55,8 +55,8 @@
     <li class="card"><span class="num">1</span><h3>내려받기</h3><p>위의 [도구 내려받기] 버튼을 누릅니다.</p></li>
     <li class="card"><span class="num">2</span><h3>압축 풀기</h3><p>정해진 위치에 풉니다.</p><p><span class="todo">위치 확정 예정</span></p></li>
     <li class="card"><span class="num">3</span><h3>bat 차단 해제</h3><p>파일 속성에서 '차단 해제'를 체크합니다.</p><p class="stuck">막혔나요? → <a href="#qa">bat 파일이 열리지 않아요</a></p></li>
-    <li class="card"><span class="num">4</span><h3>설치 bat 실행</h3><p>처음 한 번만 실행합니다.</p></li>
-    <li class="card"><span class="num">5</span><h3>도구 켜기</h3><p><b>START_AIEN.bat</b>(바로 가기 하나)을 더블클릭하고, 뜨는 창에서 1안 또는 2안 버튼을 고릅니다. 고른 도구가 켜지고 창은 닫힙니다. 도구 창은 한 PC에 하나만 켭니다.</p><p><span class="todo">2안 부분은 확정 예정</span></p></li>
+    <li class="card"><span class="num">4</span><h3>처음_한번_설치.bat 실행</h3><p>처음 한 번만 더블클릭합니다.</p></li>
+    <li class="card"><span class="num">5</span><h3>도구 켜기</h3><p><b>START_AIEN.bat</b>(바로 가기 하나)을 더블클릭하고, 뜨는 창에서 1안 또는 2안 버튼을 고릅니다. 고른 도구가 켜지고 창은 닫힙니다. 도구 창은 한 PC에 하나만 켭니다.</p></li>
     <li class="card"><span class="num">6</span><h3>키 입력</h3><p>'필요한 정보' 입력 창에 따로 전달받은 키를 넣습니다. 입력한 키는 이 PC에만 저장됩니다.</p><p class="stuck">막혔나요? → <a href="#qa">키 입력 창에 넣어도 안 돼요</a></p></li>
     <li class="card"><span class="num">7</span><h3>작은 시험</h3><p>한 장면으로 잘 되는지 확인합니다.</p></li>
   </ol>
@@ -65,18 +65,15 @@
 
 <section id="files"><div class="wrap">
   <h2>3. 파일별 설명</h2>
-  <p class="lead">내려받은 폴더 안의 파일이 각각 무엇인지, 건드려도 되는지 알려 드립니다.</p>
-  <div class="box-todo"><b>배포본 폴더 구성은 11/18에 확정됩니다.</b><br>확정되면 파일·폴더 이름, 하는 일, 건드려도 되는지를 이 자리에 표로 넣습니다.</div>
-  <div class="grid" style="margin-top:16px">
-    <div class="card"><h3>START_AIEN.bat</h3><p>시작 화면입니다. 더블클릭 → "1안 · 영어 음성·자막·입모양" 또는 "2안 · 영문 슬라이드 + 아바타" 중 고르면 그 도구가 켜집니다.</p><p><span class="todo">2안 위치·최종 이름 확정 예정</span></p></div>
-    <div class="card"><h3>설치 bat</h3><p>처음 한 번 설치합니다.</p><p><span class="todo">이름 확정 예정</span></p></div>
-    <div class="card"><h3>도구 코드 폴더</h3><p>도구가 돌아가는 파일들입니다. 건드리지 않습니다.</p></div>
-    <div class="card"><h3>설정·키 파일</h3><p>키는 도구의 입력 창에서만 넣습니다. 파일을 직접 열어 고치지 않습니다.</p></div>
-    <div class="card"><h3>안내문</h3><p>이 사이트의 내용을 요약한 파일입니다.</p></div>
-    <div class="card"><h3>원본(서버·NAS) 폴더</h3><p>읽기만 합니다. 작업 폴더는 원본 폴더 밖에 둡니다.</p></div>
+  <p class="lead">압축을 풀면 첫 화면에 아래 4개만 보입니다. 나머지는 모두 program 폴더 안에 있습니다.</p>
+  <div class="grid">
+    <div class="card"><h3>START_AIEN.bat</h3><p>도구를 켭니다. 더블클릭하면 시작 화면이 뜨고, "1안 · 영어 음성·자막·입모양" 또는 "2안 · 영문 슬라이드 + 아바타" 중 고르면 그 도구가 켜집니다.</p></div>
+    <div class="card"><h3>처음_한번_설치.bat</h3><p>도구를 쓰기 전에 처음 한 번만 실행하는 설치 파일입니다.</p></div>
+    <div class="card"><h3>읽어보세요.txt</h3><p>설치 순서와 이 안내 사이트 주소를 짧게 적은 파일입니다.</p></div>
+    <div class="card"><h3>program 폴더</h3><p>도구가 돌아가는 파일이 모두 들어 있습니다. 열어서 고치거나 지우지 마세요.</p></div>
   </div>
+  <p class="lead" style="margin-top:18px">원본(서버·NAS) 폴더는 읽기만 하고, 작업 폴더는 원본 폴더 밖에 둡니다. 키는 따로 전달해 드리며, 도구 화면의 입력 창에서만 넣습니다.</p>
 </div></section>
-
 <section id="qa"><div class="wrap">
   <h2>4. 자주 묻는 질문</h2>
   <p class="lead">눌러서 펼쳐 보세요.</p>
