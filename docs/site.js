@@ -12,16 +12,18 @@
   });
   function wire(sel, url, readyText, offText){
     $all(sel).forEach(function(a){
-      if(url){ a.href = url; a.classList.remove('off'); a.firstChild.textContent = readyText; }
+      if(url){ a.href = url; a.classList.remove('off'); a.firstChild.textContent = readyText; if(/^https?:/.test(url)){ a.target = '_blank'; a.rel = 'noopener'; } }
       else { a.removeAttribute('href'); a.classList.add('off'); a.setAttribute('aria-disabled','true'); a.firstChild.textContent = offText; }
     });
   }
   wire('[data-dl]', c.downloadUrl, '도구 내려받기', '도구 내려받기');
   $all('[data-dl] small').forEach(function(s){ s.textContent = c.downloadUrl ? '' : '준비 중 · 11/18 확정 예정'; });
+  $all('[data-dlnote]').forEach(function(e){ e.textContent = c.downloadNote || ''; });
   // 배포 준비 상태: 주소가 있을 때만 '내려받기'가 가장 강한 버튼이 되고, 없으면 '설치 전 확인하기'가 주 버튼.
   var ready = !!c.downloadUrl;
   $all('[data-state]').forEach(function(e){ e.textContent = ready ? '현재 배포본' : '배포 준비 중'; });
   if(ready){
+    $all('[data-prenote]').forEach(function(e){ e.textContent = '내려받기 전에 아래 PC 조건을 먼저 확인해 주세요.'; });
     $all('[data-check]').forEach(function(a){ a.classList.add('ghost'); });
     $all('[data-dl]').forEach(function(a){ a.classList.remove('ghost'); a.parentNode.insertBefore(a, a.parentNode.firstChild); });
   }
