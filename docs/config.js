@@ -1,8 +1,8 @@
 // 11/18 코드 동결·배포본 확정 뒤에 채우는 값입니다. null 이면 화면에 '준비 중'으로 나옵니다.
 // 키·접속 코드·내부 주소는 절대 여기에 쓰지 않습니다(공개 저장소). 공개되는 연락처는 아래 두 가지뿐입니다.
 window.AIEN_SITE = {
-  version: "1.0.3",    // 배포본 AIEN_tool_1.0.3.zip (공통 세션, 11/24 만듦)
-  updated: "2026-11-24",   // 배포본을 만든 날
+  version: "1.0.4",    // 배포본 AIEN_tool_1.0.4.zip (공통 세션, 11/24 만듦)
+  updated: "2026-11-25",   // 배포본을 만든 날
   downloadUrl: "https://drive.google.com/file/d/1IUL8FFLtRZjpZ_oKGdlz7MpXKTQ12Oin/view?usp=sharing",   // 학교 구글 드라이브 링크 (사용자 결정 11/24, 한양대 계정만 열람)
   downloadNote: "한양대학교 계정으로 로그인해야 열립니다.",   // 내려받기 버튼 아래 안내 (사용자 결정 11/24)
   contact: "에듀테크혁신팀 고유진 · 02-2220-2065 · nightowl@hanyang.ac.kr",  // 사용자 결정 11/13
