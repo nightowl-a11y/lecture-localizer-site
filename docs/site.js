@@ -17,6 +17,8 @@
     });
   }
   wire('[data-dl]', c.downloadUrl, '도구 내려받기', '도구 내려받기');
+  wire('[data-update]', c.updateUrl, '업데이트 파일 내려받기', '업데이트 파일 내려받기');
+  $all('[data-update] small').forEach(function(s){ s.textContent = c.updateUrl ? '' : '준비 중'; });
   $all('[data-dl] small').forEach(function(s){ s.textContent = c.downloadUrl ? '' : '준비 중 · 11/18 확정 예정'; });
   $all('[data-dlnote]').forEach(function(e){ e.textContent = c.downloadNote || ''; });
   // 배포 준비 상태: 주소가 있을 때만 '내려받기'가 가장 강한 버튼이 되고, 없으면 '설치 전 확인하기'가 주 버튼.
@@ -35,7 +37,8 @@
   // 도움 요청 = 메일(mailto). 주소·제목 접두사·분류·본문 양식은 config.js 의 helpMail.
   function mailto(to, subject, notice, fields){
     var lines = [notice, ''].concat(fields.map(function(f){ return f + ' '; }));
-    return 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\r\n'));
+    // 학교 PC에 기본 메일 앱이 없어도 열리도록 Gmail 웹 쓰기 창을 연다 (사용자 요청 11/25).
+    return 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   }
   function helpHref(el){
     if(c.helpUrl) return c.helpUrl;
@@ -53,9 +56,28 @@
     var h = isReport ? reportHref() : helpHref(a);
     var label = isReport ? '사이트 오류 신고' : (a.hasAttribute('data-help-mini') ? '도움 요청' : '설치·사용 문의');
     var s = a.querySelector('small');
-    if(h){ a.href = h; a.classList.remove('off'); a.removeAttribute('aria-disabled'); a.firstChild.textContent = label; if(s) s.textContent = '메일 앱으로 작성'; }
+    if(h){ a.href = h; a.target = '_blank'; a.rel = 'noopener'; a.classList.remove('off'); a.removeAttribute('aria-disabled'); a.firstChild.textContent = label; if(s) s.textContent = 'Gmail로 작성'; }
     else { a.removeAttribute('href'); a.classList.add('off'); a.firstChild.textContent = label; if(s) s.textContent = '준비 중'; }
-  });  var specs = document.getElementById('specs');
+  });
+  // Gmail 창이 안 열릴 때를 위한 주소 복사 (사용자 요청 11/25)
+  var seen = [];
+  $all('[data-help], [data-report]').forEach(function(a){
+    var box = a.parentNode; if(!box || seen.indexOf(box) >= 0 || !box.classList.contains('btns')) return; seen.push(box);
+    var p = document.createElement('p'); p.className = 'copyrow';
+    p.appendChild(document.createTextNode('메일 창이 열리지 않으면 주소를 복사해 쓰세요: '));
+    [['문의 주소 복사', c.helpMail && c.helpMail.to], ['신고 주소 복사', c.reportMail && c.reportMail.to]].forEach(function(x){
+      if(!x[1]) return;
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'copybtn'; b.textContent = x[0];
+      b.addEventListener('click', function(){
+        function done(){ b.textContent = '복사됨: ' + x[1]; setTimeout(function(){ b.textContent = x[0]; }, 3000); }
+        try{ navigator.clipboard.writeText(x[1]).then(done, function(){ window.prompt('주소를 복사하세요', x[1]); }); }
+        catch(e){ window.prompt('주소를 복사하세요', x[1]); }
+      });
+      p.appendChild(b); p.appendChild(document.createTextNode(' '));
+    });
+    box.parentNode.insertBefore(p, box.nextSibling);
+  });
+  var specs = document.getElementById('specs');
   if(specs && c.minSpecs){
     c.minSpecs.forEach(function(x){
       var d = document.createElement('div'); d.className = 'card';

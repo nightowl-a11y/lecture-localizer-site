@@ -4,6 +4,7 @@ window.AIEN_SITE = {
   version: "1.0.4",    // 배포본 AIEN_tool_1.0.4.zip (공통 세션, 11/24 만듦)
   updated: "2026-11-25",   // 배포본을 만든 날
   downloadUrl: "https://drive.google.com/file/d/1IUL8FFLtRZjpZ_oKGdlz7MpXKTQ12Oin/view?usp=sharing",   // 학교 구글 드라이브 링크 (사용자 결정 11/24, 한양대 계정만 열람)
+  updateUrl: "https://drive.google.com/file/d/1vL9wCZKqMutdDEoRE4ncEbBk-sm2VbeH/view?usp=sharing",   // 이미 설치한 분용 AIEN_update_1.0.4.zip (18.5MB, 사용자 업로드 11/25)
   downloadNote: "한양대학교 계정으로 로그인해야 열립니다.",   // 내려받기 버튼 아래 안내 (사용자 결정 11/24)
   contact: "에듀테크혁신팀 고유진 · 02-2220-2065 · nightowl@hanyang.ac.kr",  // 사용자 결정 11/13
 
